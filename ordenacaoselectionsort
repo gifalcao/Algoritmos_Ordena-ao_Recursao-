@@ -1,0 +1,32 @@
+import java.util.Arrays;
+import java.util.Random;
+public class Ordenacaoselection_sort{
+public static void main(String[] args){
+int[]g=gerarVetor(20);
+selectionSort(g);
+System.out.println(Arrays.toString(g));
+}
+private static void selectionSort(int[]g){
+for(int f=0;f<g.length;f++){
+int menor=f;
+for(int t = f+1;t<g.length;t++){
+if(g[t]<g[menor])
+menor=t;
+}
+trocar(g, f, menor);
+}
+}
+private static void trocar(int[] g, int f, int menor){
+int auxiliar = g[f];
+g[f]=g[menor];
+g[menor]=auxiliar;
+}
+public static int[] gerarVetor(int l){
+int[]g=new int[l];
+Randon gerador = new Random();
+for(int f=0;f<l;f++){
+g[f]= gerador.nextInt(100);
+}
+return g;
+}
+}
